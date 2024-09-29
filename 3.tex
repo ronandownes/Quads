@@ -1,0 +1,66 @@
+\documentclass[12pt, a4paper, addpoints]{exam}
+
+\usepackage{amsmath} % For mathematical symbols
+\usepackage{multicol} % For multi-column layout
+\usepackage{pgfmath} % For math parsing and calculations
+
+% Define the \expandbinomials command
+\newcommand{\expandbinomials}[4]{%
+    % Compute intermediate terms (A, B, C)
+    \pgfmathparse{#1*#3} \let\A\pgfmathresult  % A = a*c
+    \pgfmathparse{#1*#4 + #2*#3} \let\B\pgfmathresult  % B = a*d + b*c
+    \pgfmathparse{#2*#4} \let\C\pgfmathresult  % C = b*d
+
+    % Ensure A, B, and C are numeric values
+    \pgfmathparse{int(\A)} \let\A\pgfmathresult
+    \pgfmathparse{int(\B)} \let\B\pgfmathresult
+    \pgfmathparse{int(\C)} \let\C\pgfmathresult
+
+    % Correctly handle the signs
+    \ifnum\A>0 \def\signA{} \else \def\signA{-} \fi  % No leading +, only - if negative
+    \ifnum\B>0 \def\signB{+} \else \def\signB{-} \fi
+    \ifnum\C>0 \def\signC{+} \else \def\signC{-} \fi
+
+    % Print the entire expression in math mode
+    \[
+    \signA
+    \ifnum\A=1
+        x^2
+    \else
+        \pgfmathprintnumber{\A}x^2
+    \fi
+    \ifnum\B=0
+    \else
+        \signB
+        \ifnum\absB=1
+            x
+        \else
+            \pgfmathprintnumber{\absB}x
+        \fi
+    \fi
+    \ifnum\C=0
+    \else
+        \signC\pgfmathprintnumber{\absC}
+    \fi
+    \]
+}
+
+\begin{document}
+
+\begin{questions}
+\LARGE
+\question Factor the following quadratic expressions.
+
+\setlength{\columnsep}{50pt}
+\begin{multicols}{2}
+\begin{parts}
+
+\part \expandbinomials{1}{1}{11}{5}  % This should output 11x^2 + 16x + 5
+\part \expandbinomials{7}{11}{1}{1}  % This should output 7x^2 + 18x + 11
+
+\end{parts}
+\end{multicols}
+
+\end{questions}
+
+\end{document}

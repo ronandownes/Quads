@@ -1,0 +1,98 @@
+\documentclass[12pt, a4paper, addpoints]{exam}
+\pagestyle{empty} % Suppress page numbers
+
+\usepackage[margin=15mm]{geometry} % Set all margins to 15mm
+\usepackage{amsmath} % For mathematical symbols
+\usepackage{multicol} % For multi-column layout
+\usepackage{pgfmath} % For math parsing and calculations
+\usepackage{xcolor} % For color customization
+\usepackage[margin=15mm]{geometry}
+% Define the \expandbinomials command
+\input{commands}
+
+
+
+% Redefine the \part command to avoid a line break after the part number
+\renewcommand{\partlabel}{\thepartno)~}
+
+
+% Suppress part numbering
+% \renewcommand{\thepartno}{}
+
+
+
+
+% Make part labels white (invisible on white background)
+
+
+\begin{document}
+\section{Sum and difference central coeifficients}
+
+\begin{questions}
+\LARGE
+
+\question Solve for the roots by factors  and sketch the graphs. 
+
+\setlength{\columnsep}{20pt}
+\begin{multicols}{2}
+\begin{parts}
+% Answer all \numparts   parts.
+\part \productbinomials{1}{1}{2}{3}  \vspace{45mm}
+\part \expandbinomials{1}{1}{2}{5}  \vspace{45mm}
+\part \expandbinomials{1}{1}{2}{7}  \vspace{45mm}
+\part \expandbinomials{1}{1}{2}{11} \vspace{45mm}
+\part \expandbinomials{1}{1}{2}{13} \vspace{45mm}
+\part \expandbinomials{1}{1}{3}{5} \vspace{45mm}
+
+\end{multicols}
+\end{parts}
+
+\question Notice in the last question  the outer coefficients  sum to the central coefficient. Put where is the $x^2$ coeifficient in your roots? How about the constant coefficient? Hint: Use the words numerator and denominator in your answers.
+
+
+
+
+\newpage
+
+
+\question Central Sum negated cases. Solve for the roots by factors  and sketch the graphs. 
+\setlength{\columnsep}{20pt}
+\begin{multicols}{3}
+\begin{parts}
+\part \expandbinomials{1}{-1}{3}{-7}  \vspace{45mm}
+\part \expandbinomials{1}{-1}{3}{-11} \vspace{45mm}
+\part \expandbinomials{1}{-1}{3}{-13} \vspace{45mm}
+\part \expandbinomials{1}{-1}{5}{-7} \vspace{45mm}
+\part \expandbinomials{1}{-1}{5}{-11} \vspace{45mm}
+\part \expandbinomials{1}{-1}{5}{-13} \vspace{45mm}
+% \part \expandbinomials{1}{1}{7}{11} 
+% \part \expandbinomials{1}{1}{7}{13} 
+% \part \expandbinomials{1}{1}{11}{13}
+\end{parts}
+\end{multicols}
+\question In each case above both roots  have the same sign? Are they both positive or both negative? What kind of quadratic gives two positive roots?
+\newpage
+
+\question Central Difference Cases. Solve for the roots by factors  and sketch the graphs. 
+\setlength{\columnsep}{20pt}
+\begin{multicols}{3}
+\begin{parts}
+\part \expandbinomials{1}{1}{3}{-7}  \vspace{45mm}
+\part \expandbinomials{1}{1}{3}{-11} \vspace{45mm}
+\part \expandbinomials{1}{1}{3}{-13} \vspace{45mm}
+\part \expandbinomials{1}{1}{5}{-7} \vspace{45mm}
+\part \expandbinomials{1}{1}{5}{-11} \vspace{45mm}
+\part \expandbinomials{1}{1}{5}{-13} \vspace{45mm}
+\part \expandbinomials{1}{-1}{7}{11} \vspace{45mm}
+\part \expandbinomials{1}{-1}{7}{13} \vspace{45mm}
+\part \expandbinomials{1}{-1}{11}{13}\vspace{45mm}
+\end{parts}
+\end{multicols}
+\question In each case above constant coefficient of the quadratic is negative? What can we say about the signs of the roots?
+\newpage
+
+
+
+\end{questions}
+
+\end{document}
